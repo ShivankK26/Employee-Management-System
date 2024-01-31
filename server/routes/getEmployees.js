@@ -1,5 +1,5 @@
 import express from 'express'
-import { Employees } from '../models/Employees'
+import { Employees } from '../models/Employees.js'
 
 
 const router = express.Router();
@@ -8,6 +8,7 @@ const router = express.Router();
 router.get("/", async(req, res) => {
     try {
         const response = await Employees.find()
+        console.log(response);
         res.json(response)
     } catch (error) {
         res.status(500).send(`Error adding employee: ${error.message}`);
@@ -15,4 +16,4 @@ router.get("/", async(req, res) => {
 })
 
 
-module.exports = router;
+export { router as getEmployees };

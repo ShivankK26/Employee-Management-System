@@ -1,5 +1,5 @@
 import express from 'express'
-import { Employees } from '../models/Employees'
+import { Employees } from '../models/Employees.js'
 
 
 const router = express.Router();
@@ -23,4 +23,4 @@ router.put("/:id", async(req, res) => {
 })
 
 
-module.exports = router;
+export { router as updateEmployee };

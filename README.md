@@ -1,67 +1,87 @@
-# Employee Management System
+# Employee Management System (MERN Stack)
 
-The Employee Management System is a full-stack web application designed to facilitate the efficient management of employee records within an organization. This project utilizes a modern tech stack including Tailwind CSS, JavaScript, MongoDB, Prisma ORM, and Next.js. With this system, users can easily perform CRUD operations on the employee database, ensuring a seamless and organized management process.
+The Employee Management System is a web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It enables users to perform CRUD (Create, Read, Update, Delete) operations related to employee records efficiently.
 
 ## Features
 
-- **User-friendly Interface:** A dynamic and intuitive interface built with Next.js and styled using Tailwind CSS for a pleasant user experience.
-- **Employee CRUD Operations:** Perform Create, Read, Update, and Delete operations on employee records effortlessly.
+- **Create**: Add new employee records with relevant details.
+- **Read**: View existing employee records with their information.
+- **Update**: Modify employee details such as name, position, and contact information.
+- **Delete**: Remove employee records from the system.
 
-- **Database Integration:** MongoDB is employed as the database, with Prisma ORM for efficient and seamless data management.
+## Technologies Used
 
-- **Authentication System:** Secure user authentication using Clerk for enhanced security.
+- **MongoDB**: NoSQL database for storing employee information.
+- **Express.js**: Backend framework for handling HTTP requests and routing.
+- **React.js**: Frontend library for building user interfaces.
+- **Node.js**: JavaScript runtime environment for server-side development.
 
-## Tech Stack
+## Installation
 
-- **Frontend:**
+To run the Employee Management System on your local machine, follow these steps:
 
-  - Next.js
-  - Tailwind CSS
-
-- **Backend:**
-
-  - Prisma ORM
-  - MongoDB
-
-- **Authentication:**
-  - Clerk Authentication
-
-## Getting Started
-
-1. **Clone the Repository:**
+1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/employee-management-system.git
+   git clone https://github.com/ShivankK26/Employee-Management-System .
    ```
 
-2. **Install Dependencies:**
+2. Navigate to the project directory:
 
    ```bash
-   cd ems
+   cd Employee-Management-System
+   ```
+
+3. Install server-side dependencies:
+
+   ```bash
+   cd server
    npm install
    ```
 
-3. **Set Up Environment Variables:**
-
-   - Copy the `.env.example` file and rename it to `.env`.
-   - Fill in the required information, such as MongoDB connection string and Clerk secret.
-
-4. **Run the Application:**
+4. Install client-side dependencies:
 
    ```bash
+   cd ../client
+   npm install
+   ```
+
+5. Start the MongoDB server on your local machine.
+
+6. Start the backend server:
+
+   ```bash
+   cd ../server
+   nodemon index.js
+   ```
+
+7. Start the frontend application:
+
+   ```bash
+   cd ../client
    npm run dev
    ```
 
-   The application will be accessible at `http://localhost:3000`.
+8. Access the Employee Management System in your browser at `http://localhost:5173`.
 
 ## Usage
 
-- **Access the Application:**
-  Open your browser and navigate to `http://localhost:3000` to access the Employee Management System.
+Once the application is running, you can perform the following actions:
 
-- **Manage Employees:**
-  Perform CRUD operations on employee records directly through the user interface.
+- **Create Employee**: Click on the "Add Employee" button to create a new employee record.
+- **Read Employee**: View the list of existing employees along with their details.
+- **Update Employee**: Click on the "Edit" button next to an employee record to modify the details.
+- **Delete Employee**: Click on the "Delete" button to remove an employee from the system.
 
 ## Contributing
 
-Contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or create a pull request!
+Contributions to the Employee Management System are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and ensure tests pass.
+4. Submit a pull request detailing the changes made and any relevant information.
+
+---
+
+Manage your employee records efficiently with the Employee Management System built using the powerful MERN stack. Simplify CRUD operations and streamline your workflow today!

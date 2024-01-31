@@ -1,5 +1,5 @@
 import express from 'express'
-import { Employees } from '../models/Employees';
+import { Employees } from '../models/Employees.js'
 
 
 const router = express.Router();
@@ -8,12 +8,12 @@ const router = express.Router();
 router.post('/', async(req, res) => {
     try {
         const employee = new Employees(req.body);
-        const savedEmployee = await employee.save();
-        res.status(201).json({ id: savedEmployee._id });
+        await employee.save();
+        res.status(201).send(employee);
     } catch (error) {
-        res.status(500).json({ error: error.message || "Internal Server Error" });
+        res.status(500).send("Internal Server Error");
     }
 });
 
 
-module.exports = router;
+export { router as createEmployee };

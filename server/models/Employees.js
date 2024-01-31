@@ -33,4 +33,4 @@ const EmployeeSchema = new Schema({
 }, { timestamps: true })
 
 
-export const Employee = mongoose.model("Employee", EmployeeSchema);
+export const Employees = mongoose.model("Employees", EmployeeSchema);
