@@ -5,11 +5,11 @@ import LeftBar from '../components/LeftBar'
 
 const Dashboard = () => {
 
-  const [EmployeeId, setEmployeeId] = useState('')
-  console.log(EmployeeId);  
+  const [employeeId, setEmployeeId] = useState('')
+  console.log(employeeId);  
   return (
     <div>
-        <LeftBar employeeId={EmployeeId} />
+        <LeftBar employeeId={employeeId} />
         <MainSection setEmployeeId={setEmployeeId} />
     </div>
   )

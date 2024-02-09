@@ -13,10 +13,9 @@ const MainSection = ({ setEmployeeId }) => {
 
   const [ShowModal, setShowModal] = useState(false)
   const [EditModal, setEditModal] = useState(false)
-  const [Employees, setEmployees] = useState([])
+  const [employees, setEmployees] = useState([])
   const [EmpById, setEmpById] = useState([])
   const [ReRender, setReRender] = useState(false)
-
 
   const getAllEmployee = async () => {
     try {
@@ -26,7 +25,7 @@ const MainSection = ({ setEmployeeId }) => {
                 'Content-Type': 'application/json',
             },
         })
-        const data = res.json();
+        const data = await res.json(); 
         setEmployees(data);
     } catch (error) {
         console.log(error);
@@ -35,13 +34,13 @@ const MainSection = ({ setEmployeeId }) => {
 
   const getEmployeebyId = async (id) => {
     try {
-        const res = await fetch(`/employee/${id}`, {
+        const res = await fetch(`${baseURL}/employee/${id}`, { 
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
         })
-        const data = res.json();
+        const data = await res.json(); 
         setEmpById(data);
     } catch (error) {
         console.log(error);
@@ -50,13 +49,13 @@ const MainSection = ({ setEmployeeId }) => {
 
   const handleSearch = async (e) => {
     try {
-        const res = await fetch(`/searchemployee/${e.target.value}`, {
+        const res = await fetch(`${baseURL}/searchemployee/${e.target.value}`, { // Include the base URL
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
         })
-        const data = res.json();
+        const data = await res.json(); 
         setEmployees(data);
     } catch (error) {
         console.log(error);
@@ -88,7 +87,7 @@ const MainSection = ({ setEmployeeId }) => {
 
     <main>
         <div>
-            <div>People <span>{Employees.length}</span></div>
+            <div>People <span>{employees.length}</span></div>
             <div>
                 <div>
                     <input type="text" placeholder='Search by name, email, designation...' onChange={handleSearch} />
@@ -99,15 +98,14 @@ const MainSection = ({ setEmployeeId }) => {
 
             <div>
                 {
-                    Employees && Employees.map((emp) => {
-                        return <div key={emp._id} onClick={() => setEmployeeId(emp._id)}>
-                            <Card
-                                empData={emp}
-                                handleEdit={handleEdit}
-                                handleReRender={handleReRender}
-                            />
-                        </div>
-                    })
+                employees && employees.map((emp) => {
+                    return <div key={emp._id} onClick={() => setEmployeeId(emp._id)}>
+                    <Card
+                        empData={emp}
+                        handleEdit={handleEdit}
+                        handleReRender={handleReRender} />
+                    </div>
+                })
                 }
             </div>
         </div>
