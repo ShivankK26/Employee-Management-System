@@ -27,7 +27,7 @@ connectDB()
 })
 
 
-
+// middlewares
 app.use('/employee', getEmployees);
 app.use('/employee', getEmployeeById);
 app.use('/employee', deleteEmployee);
