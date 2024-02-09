@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import MainSection from '../components/MainSection/MainSection'
+import LeftBar from '../components/LeftBar'
 
 
 const Dashboard = () => {
+
+  const [EmployeeId, setEmployeeId] = useState('')
+  console.log(EmployeeId);  
   return (
     <div>
-        <div>
-            <button type="button">Add Employee+</button>
-        </div>
+        <LeftBar employeeId={EmployeeId} />
+        <MainSection setEmployeeId={setEmployeeId} />
     </div>
   )
 }

@@ -1,10 +1,12 @@
-import React from 'react'
 import ModalPopUp from '../ModalPopUp/ModalDetails'
 import EditModalDetails from '../ModalPopUp/EditModalDetails'
 import Card from './component/Card'
 import { BiSearch } from 'react-icons/bi'
 import { IoMdAdd } from 'react-icons/io'
-import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+
+
+const baseURL = 'http://localhost:8000';
 
 
 const MainSection = ({ setEmployeeId }) => {
@@ -18,7 +20,7 @@ const MainSection = ({ setEmployeeId }) => {
 
   const getAllEmployee = async () => {
     try {
-        const res = await fetch('/employee', {
+        const res = await fetch(`${baseURL}/employee`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -92,7 +94,21 @@ const MainSection = ({ setEmployeeId }) => {
                     <input type="text" placeholder='Search by name, email, designation...' onChange={handleSearch} />
                     <BiSearch size={20} />
                 </div>
-                <button type="button"></button>
+                <button type="button" onClick={() => setShowModal(true)}><IoMdAdd size={20} color='#fffff' />Add Employee+</button>
+            </div>
+
+            <div>
+                {
+                    Employees && Employees.map((emp) => {
+                        return <div key={emp._id} onClick={() => setEmployeeId(emp._id)}>
+                            <Card
+                                empData={emp}
+                                handleEdit={handleEdit}
+                                handleReRender={handleReRender}
+                            />
+                        </div>
+                    })
+                }
             </div>
         </div>
     </main>
