@@ -1,5 +1,9 @@
 # Employee Management System (MERN Stack)
 
+
+![Screenshot 2024-02-08 at 4 43 23 PM](https://github.com/ShivankK26/Employee-Management-System/assets/115289871/14bb5756-3a17-47e3-8051-c66a676582b8)
+
+
 The Employee Management System is a web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It enables users to perform CRUD (Create, Read, Update, Delete) operations related to employee records efficiently.
 
 ## Features
